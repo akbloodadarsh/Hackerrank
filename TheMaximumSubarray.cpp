@@ -5,8 +5,6 @@ vector<string> split_string(string);
 
 // Complete the maxSubarray function below.
 vector<int> maxSubarray(vector<int> a) {
-int sum=0;
-unordered_map<int,int>m;
 int i,n=a.size(),val=0,max_sum=INT_MIN;
 vector<int>v;
 for(i=0;i<n;++i)
