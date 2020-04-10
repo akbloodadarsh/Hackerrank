@@ -7,12 +7,17 @@ vector<string> split_string(string);
 vector<int> maxSubarray(vector<int> a) {
 int i,n=a.size(),val=0,max_sum=INT_MIN;
 vector<int>v;
+    // Task 1:-Maximum Subarray :- Can be calculated using Kaden's Algo
 for(i=0;i<n;++i)
 {
     val=max(a[i],a[i]+val);
     max_sum=max(max_sum,val);
 }
 v.emplace_back(max_sum);
+    
+    // Task 2:-Subsequence with maximum sum :- sort the array in ascending order & add the elements from left to right 
+    // until you encounter a -ve element, or if you found a -ve elemet in the beginning the it will be the largest element 
+    // so just push that in the returning vector 
 sort(a.begin(),a.end(),greater<int>());
 max_sum=0;
 i=0;
